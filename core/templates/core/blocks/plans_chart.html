@@ -1,0 +1,17 @@
+{% for plan in plans %}
+  <div class="plan-card">
+    <h2>{{ plan.name }}</h2>
+    <p>Up to {{ plan.speed_mbps }} Mbps</p>
+
+    <ul>
+      {% for feature in plan.all_features %}
+        <li>
+          {% if feature.icon %}
+            <i class="icon-{{ feature.icon }}"></i>
+          {% endif %}
+          {{ feature.name }}
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endfor %}
